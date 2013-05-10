@@ -5,7 +5,7 @@
 		<%= account.text_field :name %>
 	</p>
 
-	<%= account.fields_for :owner %>
+	<%= account.fields_for :owner do |owner| %>
 
 	<p>
 		<%= owner.label :email %>
@@ -21,6 +21,8 @@
 		<%= owner.label :password_confirmation %>
 		<%= owner.password_field :password_confirmation %>
 	</p>
+
+	<% end %>
 
 	<%= account.submit %>
 <% end %>
